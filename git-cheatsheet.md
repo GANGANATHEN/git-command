@@ -11,15 +11,13 @@
 
 Machine-level default identity:
 
-git config --global user.name "Your Name"
-
-git config --global user.email "your@email.com"
+- git config --global user.name "Your Name"
+- git config --global user.email "your@email.com"
 
 Check:
 
-git config --global user.name
-
-git config --global user.email
+- git config --global user.name
+- git config --global user.email
 
 ---
 
@@ -27,29 +25,25 @@ git config --global user.email
 
 Personal project-ku personal Git account use panna:
 
-git config --local user.name "Your Personal Name"
-
-git config --local user.email "your-personal@email.com"
+- git config --local user.name "Your Personal Name"
+- git config --local user.email "your-personal@email.com"
 
 Check:
 
-git config --local user.name
-
-git config --local user.email
+- git config --local user.name
+- git config --local user.email
 
 ---
 
 ## Check Which Config Is Being Used
 
-git config --show-origin --get user.name
-
-git config --show-origin --get user.email
+-git config --show-origin --get user.name
+-git config --show-origin --get user.email
 
 Full local config:
 
-git config --local --list
-
-Full global config:
+- git config --local --list
+- Full global config:
 
 git config --global --list
 
