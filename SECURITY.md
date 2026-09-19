@@ -2,20 +2,18 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+This repository is a Git commands reference and cheatsheet.
+There are no version-specific security updates for this repository.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you find a security issue in this repository, please report it privately to the repository maintainer.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Please do not create a public issue for security vulnerabilities.
+
+When reporting a security issue, include:
+- A description of the issue
+- Steps to reproduce it
+- Any relevant screenshots or details
+
+We will review the report and take appropriate action.
