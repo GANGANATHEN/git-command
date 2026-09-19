@@ -1,1563 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Git Cheatsheet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="A practical Git commands reference and cheatsheet for everyday Git workflows.">
+
+    <title>Git Pettagam — Git Commands Reference</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: [
+                            "Inter",
+                            "ui-sans-serif",
+                            "system-ui",
+                            "-apple-system",
+                            "BlinkMacSystemFont",
+                            "Segoe UI",
+                            "sans-serif"
+                        ],
+                        mono: [
+                            "JetBrains Mono",
+                            "Fira Code",
+                            "Consolas",
+                            "monospace"
+                        ]
+                    }
+                }
+            }
+        };
+    </script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="shell">
-        <header class="hero">
-            <h1>Git Cheatsheet</h1>
-            <p>Daily development reference for office and personal repositories. Use the command blocks directly; each
-                block has its own Copy action.</p>
+
+    <div class="site-shell">
+
+        <header class="site-header">
+            <div class="header-inner">
+                <div class="brand">
+                    <span class="brand-mark">G</span>
+
+                    <div>
+                        <h1>Git Pettagam</h1>
+                        <p>Git Commands Reference</p>
+                    </div>
+                </div>
+
+                <div class="header-meta">
+                    <span>43 Sections</span>
+                    <span>Daily Reference</span>
+                </div>
+            </div>
         </header>
 
         <div class="layout">
-            <nav aria-label="Quick Navigation">
-                <a href="#1-git-identity">1. Git Identity</a><a href="#2-check-current-repository-status">2. Check
-                    Current Repository Status</a><a href="#3-check-current-branch">3. Check Current Branch</a><a
-                    href="#4-create-new-branch">4. Create New Branch</a><a href="#5-switch-branch">5. Switch
-                    Branch</a><a href="#6-check-remote-repository">6. Check Remote Repository</a><a
-                    href="#7-get-latest-changes-from-remote">7. Get Latest Changes from Remote</a><a
-                    href="#8-check-changes">8. Check Changes</a><a href="#9-restore-discard-local-changes">9. Restore /
-                    Discard Local Changes</a><a href="#10-unstage-a-file">10. Unstage a File</a><a
-                    href="#11-get-one-file-from-another-branch">11. Get One File from Another Branch</a><a
-                    href="#12-stage-changes">12. Stage Changes</a><a href="#13-commit-changes">13. Commit Changes</a><a
-                    href="#14-push-branch">14. Push Branch</a><a href="#15-typical-feature-development-flow">15. Typical
-                    Feature Development Flow</a><a href="#16-bring-latest-main-into-your-feature-branch">16. Bring
-                    Latest Main into Your Feature Branch</a><a href="#17-merge-feature-branch-into-main">17. Merge
-                    Feature Branch into Main</a><a href="#18-merge-conflict">18. Merge Conflict</a><a
-                    href="#19-abort-a-merge">19. Abort a Merge</a><a href="#20-abort-rebase">20. Abort Rebase</a><a
-                    href="#21-view-commit-history">21. View Commit History</a><a href="#22-check-a-specific-commit">22.
-                    Check a Specific Commit</a><a href="#23-amend-last-commit">23. Amend Last Commit</a><a
-                    href="#24-revert-a-commit">24. Revert a Commit</a><a href="#25-reset">25. Reset</a><a
-                    href="#26-recover-lost-changes-commits">26. Recover Lost Changes / Commits</a><a
-                    href="#27-stash">27. Stash</a><a href="#28-delete-branch">28. Delete Branch</a><a
-                    href="#29-rename-current-branch">29. Rename Current Branch</a><a href="#30-compare-branches">30.
-                    Compare Branches</a><a href="#31-see-which-files-changed">31. See Which Files Changed</a><a
-                    href="#32-remove-untracked-files">32. Remove Untracked Files</a><a
-                    href="#33-pull-before-starting-work">33. Pull Before Starting Work</a><a
-                    href="#34-before-commit-checklist">34. Before Commit Checklist</a><a
-                    href="#35-before-push-checklist">35. Before Push Checklist</a><a
-                    href="#36-if-you-accidentally-added-a-secret">36. If You Accidentally Added a Secret</a><a
-                    href="#37-check-ignored-files">37. Check Ignored Files</a><a
-                    href="#38-common-git-commands-quick-reference">38. Common Git Commands – Quick Reference</a><a
-                    href="#39-nano-editor">39. Nano Editor</a><a href="#40-vim-editor">40. Vim Editor</a><a
-                    href="#41-recommended-daily-workflow">41. Recommended Daily Workflow</a><a
-                    href="#42-important-difference">42. Important Difference</a><a href="#43-golden-rule">43. Golden
-                    Rule</a><a href="#git-command-safety-guide">Git Command Safety Guide</a><a
-                    href="#final-reminder">Final Reminder</a>
+
+            <nav class="quick-nav" aria-label="Quick Navigation">
+
+                <div class="nav-header">
+                    <span class="nav-title">Quick Navigation</span>
+                    <span class="nav-count">43</span>
+                </div>
+
+                <div class="nav-scroll">
+
+                    <!-- UN MODIFIED QUICK NAV LINKS -->
+                    <!-- Nee already irukkura <a> links ellam inga paste pannunga -->
+
+                    <a href="#1-git-identity">1. Git Identity</a>
+                    <a href="#2-check-current-repository-status">2. Check Current Repository Status</a>
+                    <a href="#3-check-current-branch">3. Check Current Branch</a>
+                    <a href="#4-create-new-branch">4. Create New Branch</a>
+                    <a href="#5-switch-branch">5. Switch Branch</a>
+                    <a href="#6-check-remote-repository">6. Check Remote Repository</a>
+                    <a href="#7-get-latest-changes-from-remote">7. Get Latest Changes from Remote</a>
+                    <a href="#8-check-changes">8. Check Changes</a>
+                    <a href="#9-restore-discard-local-changes">9. Restore / Discard Local Changes</a>
+                    <a href="#10-unstage-a-file">10. Unstage a File</a>
+                    <a href="#11-get-one-file-from-another-branch">11. Get One File from Another Branch</a>
+                    <a href="#12-stage-changes">12. Stage Changes</a>
+                    <a href="#13-commit-changes">13. Commit Changes</a>
+                    <a href="#14-push-branch">14. Push Branch</a>
+                    <a href="#15-typical-feature-development-flow">15. Typical Feature Development Flow</a>
+                    <a href="#16-bring-latest-main-into-your-feature-branch">16. Bring Latest Main into Your Feature
+                        Branch</a>
+                    <a href="#17-merge-feature-branch-into-main">17. Merge Feature Branch into Main</a>
+                    <a href="#18-merge-conflict">18. Merge Conflict</a>
+                    <a href="#19-abort-a-merge">19. Abort a Merge</a>
+                    <a href="#20-abort-rebase">20. Abort Rebase</a>
+                    <a href="#21-view-commit-history">21. View Commit History</a>
+                    <a href="#22-check-a-specific-commit">22. Check a Specific Commit</a>
+                    <a href="#23-amend-last-commit">23. Amend Last Commit</a>
+                    <a href="#24-revert-a-commit">24. Revert a Commit</a>
+                    <a href="#25-reset">25. Reset</a>
+                    <a href="#26-recover-lost-changes-commits">26. Recover Lost Changes / Commits</a>
+                    <a href="#27-stash">27. Stash</a>
+                    <a href="#28-delete-branch">28. Delete Branch</a>
+                    <a href="#29-rename-current-branch">29. Rename Current Branch</a>
+                    <a href="#30-compare-branches">30. Compare Branches</a>
+                    <a href="#31-see-which-files-changed">31. See Which Files Changed</a>
+                    <a href="#32-remove-untracked-files">32. Remove Untracked Files</a>
+                    <a href="#33-pull-before-starting-work">33. Pull Before Starting Work</a>
+                    <a href="#34-before-commit-checklist">34. Before Commit Checklist</a>
+                    <a href="#35-before-push-checklist">35. Before Push Checklist</a>
+                    <a href="#36-if-you-accidentally-added-a-secret">36. If You Accidentally Added a Secret</a>
+                    <a href="#37-check-ignored-files">37. Check Ignored Files</a>
+                    <a href="#38-common-git-commands-quick-reference">38. Common Git Commands – Quick Reference</a>
+                    <a href="#39-nano-editor">39. Nano Editor</a>
+                    <a href="#40-vim-editor">40. Vim Editor</a>
+                    <a href="#41-recommended-daily-workflow">41. Recommended Daily Workflow</a>
+                    <a href="#42-important-difference">42. Important Difference</a>
+                    <a href="#43-golden-rule">43. Golden Rule</a>
+                    <a href="#git-command-safety-guide">Git Command Safety Guide</a>
+                    <a href="#final-reminder">Final Reminder</a>
+
+                </div>
             </nav>
 
-            <main>
-                <section id="1-git-identity">
-                    <h2>1. Git Identity</h2>
-                    <h2 id="global-identity">Global Identity</h2>
-                    <p>Machine-level default identity:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --global user.name &quot;Your Name&quot;</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --global user.email &quot;your@email.com&quot;</code></pre>
-                    </div>
-                    <h3>Check Global Identity</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --global user.name</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --global user.email</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="repository-specific-identity">Repository-specific Identity</h2>
-                    <p>Personal project-ku personal Git account use panna:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --local user.name &quot;Your Personal Name&quot;</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --local user.email &quot;your-personal@email.com&quot;</code></pre>
-                    </div>
-                    <h3>Check Local Identity</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --local user.name</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --local user.email</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="check-which-config-is-actually-being-used">Check Which Config Is Actually Being Used</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --show-origin --get user.name</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --show-origin --get user.email</code></pre>
-                    </div>
-                    <h3>Full Local Config</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --local --list</code></pre>
-                    </div>
-                    <h3>Full Global Config</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git config --global --list</code></pre>
-                    </div>
-                    <blockquote> <code>(END)</code> vandha terminal-la <code>q</code> press pannunga.</blockquote>
-                    <hr>
-                </section>
-                <section id="2-check-current-repository-status">
-                    <h2>2. Check Current Repository Status</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <p>Idhu current working tree-la:</p>
-                    <ul>
-                        <li>modified files</li>
-                        <li>deleted files</li>
-                        <li>untracked files</li>
-                        <li>staged files</li>
-                        <li>current branch</li>
-                    </ul>
-                    <p>ellam kaamikum.</p>
-                    <hr>
-                </section>
-                <section id="3-check-current-branch">
-                    <h2>3. Check Current Branch</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch</code></pre>
-                    </div>
-                    <h3>Current Branch Mattum</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch --show-current</code></pre>
-                    </div>
-                    <h3>All Local + Remote Branches</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch -a</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="4-create-new-branch">
-                    <h2>4. Create New Branch</h2>
-                    <h3>New Branch Create + Immediately Switch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout -b feature/my-feature</code></pre>
-                    </div>
-                    <h3>Modern Command</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git switch -c feature/my-feature</code></pre>
-                    </div>
-                    <h3>Example</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout -b expense-api-binding</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="5-switch-branch">
-                    <h2>5. Switch Branch</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout main</code></pre>
-                    </div>
-                    <h3>Modern Command</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git switch main</code></pre>
-                    </div>
-                    <h3>Another Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout expense-branch</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git switch expense-branch</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="6-check-remote-repository">
-                    <h2>6. Check Remote Repository</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git remote -v</code></pre>
-                    </div>
-                    <h3>Detailed Remote Information</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git remote show origin</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="7-get-latest-changes-from-remote">
-                    <h2>7. ⬇️ Get Latest Changes from Remote</h2>
-                    <h3>Download Remote Changes Only</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git fetch origin</code></pre>
-                    </div>
-                    <h3>Current Branch-ku Latest Main</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <h3>Specific Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin expense-branch</code></pre>
-                    </div>
-                    <blockquote> <code>pull</code> = remote changes fetch + local branch-la integrate pannum.
-                    </blockquote>
-                    <hr>
-                </section>
-                <section id="8-check-changes">
-                    <h2>8. Check Changes</h2>
-                    <h3>All Unstaged Changes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff</code></pre>
-                    </div>
-                    <h3>Specific File</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff -- &quot;src/app/dashboard/page.js&quot;</code></pre>
-                    </div>
-                    <h3>Staged Changes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff --cached</code></pre>
-                    </div>
-                    <h3>Branch Comparison</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff main...expense-branch</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="9-restore-discard-local-changes">
-                    <h2>9. Restore / Discard Local Changes</h2>
-                    <h2 id="discard-changes-in-one-file">Discard Changes in One File</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore -- &quot;src/app/dashboard/page.js&quot;</code></pre>
-                    </div>
-                    <blockquote>️ File commit pannala / stage pannala na local changes disappear aagum.</blockquote>
-                    <hr>
-                    <h2 id="discard-changes-in-multiple-files">Discard Changes in Multiple Files</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore -- &quot;file1.js&quot; &quot;file2.js&quot;</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="discard-all-unstaged-changes">Discard ALL Unstaged Changes</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore .</code></pre>
-                    </div>
-                    <blockquote> <strong>CAREFUL:</strong> Current uncommitted changes ellam permanently remove aagum.
-                    </blockquote>
-                    <hr>
-                </section>
-                <section id="10-unstage-a-file">
-                    <h2>10. Unstage a File</h2>
-                    <p>Mistakenly <code>git add</code> pannita:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore --staged -- &quot;src/app/dashboard/page.js&quot;</code></pre>
-                    </div>
-                    <h3>All Staged Files Unstage</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore --staged .</code></pre>
-                    </div>
-                    <blockquote> Idhu file changes-ah delete pannaadhu. Stage-la irundhu mattum remove pannum.
-                    </blockquote>
-                    <hr>
-                </section>
-                <section id="11-get-one-file-from-another-branch">
-                    <h2>11. Get One File from Another Branch</h2>
-                    <p>Example:</p>
-                    <p><code>expense-branch</code> la irukkura file-ah current branch-ku kondu vara:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout expense-branch -- &quot;src/app/[locale]/(layout1)/expense/component/expenseListTable.js&quot;</code></pre>
-                    </div>
-                    <h3>Modern Equivalent</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore --source expense-branch -- &quot;src/app/[locale]/(layout1)/expense/component/expenseListTable.js&quot;</code></pre>
-                    </div>
-                    <blockquote>️ <strong>IMPORTANT:</strong> <code>git checkout --merge &lt;file&gt;</code> is NOT the
-                        normal command for copying a file from another branch.</blockquote>
-                    <hr>
-                </section>
-                <section id="12-stage-changes">
-                    <h2>12. Stage Changes</h2>
-                    <h3>One File</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add &quot;src/app/dashboard/page.js&quot;</code></pre>
-                    </div>
-                    <h3>Multiple Files</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add &quot;file1.js&quot; &quot;file2.js&quot;</code></pre>
-                    </div>
-                    <h3>All Changes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add .</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="13-commit-changes">
-                    <h2>13. Commit Changes</h2>
-                    <h3>Normal Commit</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit -m &quot;Add expense API binding&quot;</code></pre>
-                    </div>
-                    <h3>Good Commit Message Examples</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit -m &quot;Fix dashboard notification pagination&quot;</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit -m &quot;Add task status API integration&quot;</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit -m &quot;Fix attachment preview loading&quot;</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="14-push-branch">
-                    <h2>14. Push Branch</h2>
-                    <h3>First Push for a New Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push -u origin expense-branch</code></pre>
-                    </div>
-                    <h3>After Upstream Is Set</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push</code></pre>
-                    </div>
-                    <h3>Specific Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push origin expense-branch</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="15-typical-feature-development-flow">
-                    <h2>15. ️ Typical Feature Development Flow</h2>
-                    <h2 id="step-1-start-from-main">Step 1 – Start from Main</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout main</code></pre>
-                    </div>
-                    <h2 id="step-2-get-latest-main">Step 2 – Get Latest Main</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <h2 id="step-3-create-feature-branch">Step 3 – Create Feature Branch</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout -b expense-api-binding</code></pre>
-                    </div>
-                    <h2 id="step-4-do-development">Step 4 – Do Development</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>Code changes...</code></pre>
-                    </div>
-                    <h2 id="step-5-check-changes">Step 5 – Check Changes</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff</code></pre>
-                    </div>
-                    <h2 id="step-6-stage">Step 6 – Stage</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add .</code></pre>
-                    </div>
-                    <h2 id="step-7-commit">Step 7 – Commit</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit -m &quot;Add expense API binding&quot;</code></pre>
-                    </div>
-                    <h2 id="step-8-push">Step 8 – Push</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push -u origin expense-api-binding</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="16-bring-latest-main-into-your-feature-branch">
-                    <h2>16. Bring Latest Main into Your Feature Branch</h2>
-                    <h3>First – Switch to Main</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout main</code></pre>
-                    </div>
-                    <h3>Get Latest Main</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <h3>Switch Back to Feature Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout expense-branch</code></pre>
-                    </div>
-                    <h3>Merge Main</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git merge main</code></pre>
-                    </div>
-                    <h3>If No Conflict</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push origin expense-branch</code></pre>
-                    </div>
-                    <blockquote> Feature branch-la work continue pannumbothu main changes latest-ah keep panna useful.
-                    </blockquote>
-                    <hr>
-                </section>
-                <section id="17-merge-feature-branch-into-main">
-                    <h2>17. Merge Feature Branch into Main</h2>
-                    <h3>Switch to Main</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout main</code></pre>
-                    </div>
-                    <h3>Get Latest Main</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <h3>Merge Feature Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git merge expense-branch</code></pre>
-                    </div>
-                    <h3>If Everything Is Fine</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push origin main</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="18-merge-conflict">
-                    <h2>18. ️ Merge Conflict</h2>
-                    <p>Merge pannumbothu conflict vandha:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <p>Git conflict files list pannum.</p>
-                    <p>Conflict file open pannumbothu:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+            <main class="content">
 
-current branch code
-
-=======
-
-incoming branch code
-
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; expense-branch</code></pre>
-                    </div>
-                    <p>Correct code manually select pannunga.</p>
-                    <h3>Then Stage Resolved File</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add &quot;conflicted-file.js&quot;</code></pre>
-                    </div>
-                    <h3>Check Again</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <h3>Finish Merge</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit</code></pre>
-                    </div>
-                    <h3>Push</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="19-abort-a-merge">
-                    <h2>19. Abort a Merge</h2>
-                    <p>Conflict vandhuduchu, merge continue panna vendam na:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git merge --abort</code></pre>
-                    </div>
-                    <blockquote> Merge start pannadhukku munnaadi irundha state-ku return aagum.</blockquote>
-                    <hr>
-                </section>
-                <section id="20-abort-rebase">
-                    <h2>20. Abort Rebase</h2>
-                    <p>Rebase conflict situation-la:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git rebase --abort</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="21-view-commit-history">
-                    <h2>21. View Commit History</h2>
-                    <h3>Simple</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git log</code></pre>
-                    </div>
-                    <h3>One-line Format</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git log --oneline</code></pre>
-                    </div>
-                    <h3>Recent Commits</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git log --oneline -10</code></pre>
-                    </div>
-                    <h3>Graph</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git log --oneline --graph --decorate --all</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="22-check-a-specific-commit">
-                    <h2>22. Check a Specific Commit</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git show COMMIT_ID</code></pre>
-                    </div>
-                    <h3>Example</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git show a1b2c3d</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="23-amend-last-commit">
-                    <h2>23. ️ Amend Last Commit</h2>
-                    <h3>Last Commit Message Wrong</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit --amend -m &quot;Correct commit message&quot;</code></pre>
-                    </div>
-                    <h3>Last Commit-la File Miss Aagiduchu</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add &quot;missing-file.js&quot;</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit --amend --no-edit</code></pre>
-                    </div>
-                    <blockquote>️ Already pushed commit-ah amend pannina force push required aagalam. Shared branch-la
-                        avoid pannunga.</blockquote>
-                    <hr>
-                </section>
-                <section id="24-revert-a-commit">
-                    <h2>24. ↩️ Revert a Commit</h2>
-                    <p>Already pushed/shared branch commit-ah safely undo panna:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git revert COMMIT_ID</code></pre>
-                    </div>
-                    <h3>Then Push</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push</code></pre>
-                    </div>
-                    <blockquote> <code>revert</code> new commit create pannum. Shared branch-ku safer.</blockquote>
-                    <hr>
-                </section>
-                <section id="25-reset">
-                    <h2>25. ⏪ Reset</h2>
-                    <h2 id="unstage-last-commit-but-keep-changes">Unstage Last Commit but Keep Changes</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reset --soft HEAD~1</code></pre>
-                    </div>
-                    <h2 id="remove-commit-and-keep-changes-unstaged">Remove Commit and Keep Changes Unstaged</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reset HEAD~1</code></pre>
-                    </div>
-                    <h2 id="remove-commit-and-changes">Remove Commit AND Changes</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reset --hard HEAD~1</code></pre>
-                    </div>
-                    <blockquote> <code>--hard</code> use pannumbothu careful. Uncommitted changes lose aagalam.
-                    </blockquote>
-                    <hr>
-                </section>
-                <section id="26-recover-lost-changes-commits">
-                    <h2>26. Recover Lost Changes / Commits</h2>
-                    <h3>Git Reflog</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reflog</code></pre>
-                    </div>
-                    <p>Previous HEAD identify pannitu:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout COMMIT_ID</code></pre>
-                    </div>
-                    <h3>Or Recovery Branch Create</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout -b recovery-branch COMMIT_ID</code></pre>
-                    </div>
-                    <blockquote> Accidentally reset/rebase pannumbothu <code>reflog</code> useful.</blockquote>
-                    <hr>
-                </section>
-                <section id="27-stash">
-                    <h2>27. Stash</h2>
-                    <h3>Temporary-ah Current Changes Save</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash</code></pre>
-                    </div>
-                    <h3>List</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash list</code></pre>
-                    </div>
-                    <h3>Latest Stash Restore + Remove from Stash</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash pop</code></pre>
-                    </div>
-                    <h3>Specific Stash</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash apply stash@{0}</code></pre>
-                    </div>
-                    <h3>Stash with Message</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash push -m &quot;WIP expense page&quot;</code></pre>
-                    </div>
-                    <h3>Delete One Stash</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash drop stash@{0}</code></pre>
-                    </div>
-                    <h3>Delete All Stashes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash clear</code></pre>
-                    </div>
-                    <blockquote> Branch switch panna current work disturb aagumbothu stash useful.</blockquote>
-                    <hr>
-                </section>
-                <section id="28-delete-branch">
-                    <h2>28. ️ Delete Branch</h2>
-                    <h2 id="local-branch">Local Branch</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch -d expense-branch</code></pre>
-                    </div>
-                    <h2 id="force-delete">Force Delete</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch -D expense-branch</code></pre>
-                    </div>
-                    <h2 id="remote-branch">Remote Branch</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push origin --delete expense-branch</code></pre>
-                    </div>
-                    <blockquote>️ <code>-D</code> use panna branch merge aagala irundhalum delete pannum.</blockquote>
-                    <hr>
-                </section>
-                <section id="29-rename-current-branch">
-                    <h2>29. ️ Rename Current Branch</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch -m new-branch-name</code></pre>
-                    </div>
-                    <h3>If Already Pushed</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push -u origin new-branch-name</code></pre>
-                    </div>
-                    <h3>Old Remote Branch Delete</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push origin --delete old-branch-name</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="30-compare-branches">
-                    <h2>30. Compare Branches</h2>
-                    <h3>Commits Difference</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git log main..expense-branch --oneline</code></pre>
-                    </div>
-                    <h3>Changes Difference</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff main...expense-branch</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="31-see-which-files-changed">
-                    <h2>31. See Which Files Changed</h2>
-                    <h3>Current Status</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <h3>Only Changed File Names</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff --name-only</code></pre>
-                    </div>
-                    <h3>Committed Changes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff --name-only HEAD~1 HEAD</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="32-remove-untracked-files">
-                    <h2>32. Remove Untracked Files</h2>
-                    <h3>Check First – Nothing Gets Deleted</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git clean -n</code></pre>
-                    </div>
-                    <h3>Delete Untracked Files</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git clean -f</code></pre>
-                    </div>
-                    <h3>Delete Untracked Files + Directories</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git clean -fd</code></pre>
-                    </div>
-                    <blockquote> <strong>VERY CAREFUL:</strong> <code>git clean</code> Git track pannaadha files-ah
-                        delete pannum.</blockquote>
-                    <hr>
-                </section>
-                <section id="33-pull-before-starting-work">
-                    <h2>33. Pull Before Starting Work</h2>
-                    <p>Daily recommended flow:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout main</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout -b feature/my-feature</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="34-before-commit-checklist">
-                    <h2>34. Before Commit Checklist</h2>
-                    <h3>Check Status</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <h3>Check Code Changes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff</code></pre>
-                    </div>
-                    <h3>Check Staged Changes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff --cached</code></pre>
-                    </div>
-                    <h3>Check These Before Commit</h3>
-                    <ul>
-                        <li>Correct files modified?</li>
-                        <li>Debug <code>console.log</code> remove pannacha?</li>
-                        <li>Unwanted files stage aagala?</li>
-                        <li>Environment files accidentally stage aagala?</li>
-                        <li>API URLs correct-ah?</li>
-                        <li>Secrets / tokens commit aagala?</li>
-                        <li>Build errors irukka?</li>
-                        <li>Commit message meaningful-ah?</li>
-                    </ul>
-                    <h3>Stage</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add .</code></pre>
-                    </div>
-                    <h3>Commit</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit -m &quot;Your message&quot;</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="35-before-push-checklist">
-                    <h2>35. Before Push Checklist</h2>
-                    <h3>Check Status</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <h3>Check Current Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch --show-current</code></pre>
-                    </div>
-                    <h3>Check Recent Commits</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git log --oneline -5</code></pre>
-                    </div>
-                    <h3>Compare with Main</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff main...HEAD</code></pre>
-                    </div>
-                    <h3>Push</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="36-if-you-accidentally-added-a-secret">
-                    <h2>36. If You Accidentally Added a Secret</h2>
-                    <p>Immediately remove from current staging:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore --staged .env</code></pre>
-                    </div>
-                    <blockquote>️ Already committed secret-na file remove pannradhu mattum sufficient illa.</blockquote>
-                    <p>&gt;</p>
-                    <blockquote>Secret value itself rotate/revoke pannunga.</blockquote>
-                    <p>&gt;</p>
-                    <blockquote>Git history cleanup may also be required.</blockquote>
-                    <hr>
-                </section>
-                <section id="37-check-ignored-files">
-                    <h2>37. Check Ignored Files</h2>
-                    <h3>All Ignored Files</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status --ignored</code></pre>
-                    </div>
-                    <h3>Check Whether a File Is Ignored</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git check-ignore -v &quot;filename&quot;</code></pre>
-                    </div>
-                    <h3>Example</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git check-ignore -v &quot;.env&quot;</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="38-common-git-commands-quick-reference">
-                    <h2>38. Common Git Commands – Quick Reference</h2>
-                    <h3>Check Status</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <h3>Current Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch --show-current</code></pre>
-                    </div>
-                    <h3>Create Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout -b branch-name</code></pre>
-                    </div>
-                    <h3>Switch Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout branch-name</code></pre>
-                    </div>
-                    <h3>Get Latest</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <h3>Check Changes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff</code></pre>
-                    </div>
-                    <h3>Stage</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add .</code></pre>
-                    </div>
-                    <h3>Commit</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit -m &quot;message&quot;</code></pre>
-                    </div>
-                    <h3>Push</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push</code></pre>
-                    </div>
-                    <h3>New Branch Push</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push -u origin branch-name</code></pre>
-                    </div>
-                    <h3>Discard File Changes</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore -- &quot;file&quot;</code></pre>
-                    </div>
-                    <h3>Unstage</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore --staged -- &quot;file&quot;</code></pre>
-                    </div>
-                    <h3>Copy File from Another Branch</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout branch-name -- &quot;file&quot;</code></pre>
-                    </div>
-                    <h3>Merge</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git merge branch-name</code></pre>
-                    </div>
-                    <h3>Abort Merge</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git merge --abort</code></pre>
-                    </div>
-                    <h3>History</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git log --oneline</code></pre>
-                    </div>
-                    <h3>Temporary Save</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash</code></pre>
-                    </div>
-                    <h3>Restore Stash</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash pop</code></pre>
-                    </div>
-                    <h3>Recover History</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reflog</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="39-nano-editor">
-                    <h2>39. Nano Editor</h2>
-                    <p>Some Git operations editor open pannumbothu Nano varalam.</p>
-                    <h3>Save</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>Ctrl + O</code></pre>
-                    </div>
-                    <h3>Confirm</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>Enter</code></pre>
-                    </div>
-                    <h3>Exit</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>Ctrl + X</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="40-vim-editor">
-                    <h2>40. Vim Editor</h2>
-                    <p>Git editor Vim open pannina:</p>
-                    <h3>Save + Exit</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>Esc</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>:wq</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>Enter</code></pre>
-                    </div>
-                    <h3>Exit Without Saving</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>Esc</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>:q!</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>text</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>Enter</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="41-recommended-daily-workflow">
-                    <h2>41. Recommended Daily Workflow</h2>
-                    <h2 id="start-work">Start Work</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout main</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout -b feature/my-feature</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="during-development">During Development</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="before-commit">Before Commit</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git add .</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff --cached</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git commit -m &quot;Describe the change&quot;</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="push">Push</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push -u origin feature/my-feature</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="later-pushes">Later Pushes</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="finish-merge">Finish / Merge</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout main</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git merge feature/my-feature</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push origin main</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="42-important-difference">
-                    <h2>42. Important Difference</h2>
-                    <h2 id="git-restore-file"><code>git restore &quot;file&quot;</code></h2>
-                    <p>→ Local file changes discard.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore -- &quot;file&quot;</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="git-restore-staged-file"><code>git restore --staged &quot;file&quot;</code></h2>
-                    <p>→ Staging-la irundhu remove; code changes remain.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore --staged -- &quot;file&quot;</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="git-checkout-branch-file"><code>git checkout branch -- &quot;file&quot;</code></h2>
-                    <p>→ Another branch-la irukkura specific file-ah current branch-ku copy pannum.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git checkout branch-name -- &quot;file&quot;</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="git-merge-branch"><code>git merge branch</code></h2>
-                    <p>→ Another branch changes current branch-kku merge pannum.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git merge branch-name</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="git-revert-commit-id"><code>git revert COMMIT_ID</code></h2>
-                    <p>→ Existing commit-ah undo panna new commit create pannum.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git revert COMMIT_ID</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="git-reset"><code>git reset</code></h2>
-                    <p>→ Current branch history / HEAD move pannum.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reset HEAD~1</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="git-stash"><code>git stash</code></h2>
-                    <p>→ Temporary local changes save pannum.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="git-fetch"><code>git fetch</code></h2>
-                    <p>→ Remote changes download mattum pannum; current branch automatically change aagadhu.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git fetch origin</code></pre>
-                    </div>
-                    <hr>
-                    <h2 id="git-pull"><code>git pull</code></h2>
-                    <p>→ Remote changes fetch + integrate pannum.</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git pull origin main</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="43-golden-rule">
-                    <h2>43. ️ Golden Rule</h2>
-                    <p>Before destructive commands:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff</code></pre>
-                    </div>
-                    <p>If doubt irundha:</p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash</code></pre>
-                    </div>
-                    <p>Then experiment pannunga.</p>
-                    <h2 id="especially-careful-with">Especially Careful With</h2>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reset --hard</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git clean -fd</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push --force</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push --force-with-lease</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch -D</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash clear</code></pre>
-                    </div>
-                    <blockquote>️ Shared / main branch-la force push avoid pannunga.</blockquote>
-                    <p>&gt;</p>
-                    <blockquote><code>--force-with-lease</code> is safer than plain <code>--force</code>, but still use
-                        only when you understand the history change.</blockquote>
-                    <hr>
-                </section>
-                <section id="git-command-safety-guide">
-                    <h2>Git Command Safety Guide</h2>
-                    <p>| Symbol | Meaning |</p>
-                    <p>|---|---|</p>
-                    <p>| | Normal / commonly used |</p>
-                    <p>| | Information / checking |</p>
-                    <p>| | Use carefully |</p>
-                    <p>| | Destructive / high risk |</p>
-                    <p>| | Branch / workflow |</p>
-                    <h3> Safe Daily Commands</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git log --oneline</code></pre>
-                    </div>
-                    <h3> Use Carefully</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git restore -- &quot;file&quot;</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash pop</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch -d branch-name</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git revert COMMIT_ID</code></pre>
-                    </div>
-                    <h3> High Risk</h3>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reset --hard HEAD~1</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git clean -fd</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git push --force</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash clear</code></pre>
-                    </div>
-                    <hr>
-                </section>
-                <section id="final-reminder">
-                    <h2>Final Reminder</h2>
-                    <p><strong>Before changing anything:</strong></p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <p><strong>Before committing:</strong></p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git diff</code></pre>
-                    </div>
-                    <p><strong>Before pushing:</strong></p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git status</code></pre>
-                    </div>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git branch --show-current</code></pre>
-                    </div>
-                    <p><strong>If something goes wrong:</strong></p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git reflog</code></pre>
-                    </div>
-                    <p><strong>If you are unsure about local changes:</strong></p>
-                    <div class="code-wrap">
-                        <div class="code-head"><span>bash</span><button type="button" class="copy-btn">Copy</button>
-                        </div>
-                        <pre><code>git stash</code></pre>
-                    </div>
-                    <blockquote> <strong>Check → Change → Diff → Stage → Commit → Push</strong></blockquote>
-                    <p>&gt;</p>
-                    <blockquote>This order follow pannina daily Git workflow clean-ah maintain panna mudiyum.
-                    </blockquote>
-                </section>
 
             </main>
+
         </div>
     </div>
 
     <script>
         document.querySelectorAll(".copy-btn").forEach((button) => {
             button.addEventListener("click", async () => {
-                const code = button.closest(".code-wrap")?.querySelector("pre code")?.innerText || "";
+                const code =
+                    button
+                        .closest(".code-wrap")
+                        ?.querySelector("pre code")
+                        ?.innerText || "";
 
                 try {
                     await navigator.clipboard.writeText(code);
 
                     const oldText = button.textContent;
                     button.textContent = "Copied";
+                    button.classList.add("is-copied");
 
                     setTimeout(() => {
                         button.textContent = oldText;
+                        button.classList.remove("is-copied");
                     }, 1100);
                 } catch {
                     button.textContent = "Copy failed";
@@ -1568,7 +164,35 @@ incoming branch code
                 }
             });
         });
+
+        const navLinks = document.querySelectorAll(".quick-nav a");
+        const sections = document.querySelectorAll(".content section[id]");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+
+                    navLinks.forEach((link) => {
+                        link.classList.remove("active");
+                    });
+
+                    const activeLink = document.querySelector(
+                        `.quick-nav a[href="#${entry.target.id}"]`
+                    );
+
+                    activeLink?.classList.add("active");
+                });
+            },
+            {
+                rootMargin: "-15% 0px -70% 0px",
+                threshold: 0
+            }
+        );
+
+        sections.forEach((section) => observer.observe(section));
     </script>
+
 </body>
 
 </html>
