@@ -3,6 +3,52 @@
 > Purpose: Office repo / Personal repo work pannumbothu frequently use panna Git commands.
 > Commands copy-paste panna before branch/repo name and file name correct-ah check pannunga.
 
+## Table of Contents
+
+- [1. Git Identity](#1-git-identity)
+- [2. Check Current Repository Status](#2-check-current-repository-status)
+- [3. Check Current Branch](#3-check-current-branch)
+- [4. Create New Branch](#4-create-new-branch)
+- [5. Switch Branch](#5-switch-branch)
+- [6. Check Remote Repository](#6-check-remote-repository)
+- [7. Get Latest Changes from Remote](#7-get-latest-changes-from-remote)
+- [8. Check Changes](#8-check-changes)
+- [9. Restore / Discard Local Changes](#9-restore--discard-local-changes)
+- [10. Unstage a File](#10-unstage-a-file)
+- [11. Get One File from Another Branch](#11-get-one-file-from-another-branch)
+- [12. Stage Changes](#12-stage-changes)
+- [13. Commit Changes](#13-commit-changes)
+- [14. Push Branch](#14-push-branch)
+- [15. Typical Feature Development Flow](#15-typical-feature-development-flow)
+- [16. Bring Latest Main into Your Feature Branch](#16-bring-latest-main-into-your-feature-branch)
+- [17. Merge Feature Branch into Main](#17-merge-feature-branch-into-main)
+- [18. Merge Conflict](#18-merge-conflict)
+- [19. Abort a Merge](#19-abort-a-merge)
+- [20. Abort Rebase](#20-abort-rebase)
+- [21. View Commit History](#21-view-commit-history)
+- [22. Check a Specific Commit](#22-check-a-specific-commit)
+- [23. Amend Last Commit](#23-amend-last-commit)
+- [24. Revert a Commit](#24-revert-a-commit)
+- [25. Reset](#25-reset)
+- [26. Recover Lost Changes / Commits](#26-recover-lost-changes--commits)
+- [27. Stash](#27-stash)
+- [28. Delete Branch](#28-delete-branch)
+- [29. Rename Current Branch](#29-rename-current-branch)
+- [30. Compare Branches](#30-compare-branches)
+- [31. See Which Files Changed](#31-see-which-files-changed)
+- [32. Remove Untracked Files](#32-remove-untracked-files)
+- [33. Pull Before Starting Work](#33-pull-before-starting-work)
+- [34. Before Commit Checklist](#34-before-commit-checklist)
+- [35. Before Push Checklist](#35-before-push-checklist)
+- [36. If You Accidentally Added a Secret](#36-if-you-accidentally-added-a-secret)
+- [37. Check Ignored Files](#37-check-ignored-files)
+- [38. Common Git Commands – Quick Reference](#38-common-git-commands--quick-reference)
+- [39. Nano Editor](#39-nano-editor)
+- [40. Vim Editor](#40-vim-editor)
+- [41. Recommended Daily Workflow](#41-recommended-daily-workflow)
+- [42. Important Difference](#42-important-difference)
+- [43. Golden Rule](#43-golden-rule)
+
 ---
 
 # 1. Git Identity
