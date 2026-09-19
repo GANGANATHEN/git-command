@@ -485,6 +485,7 @@ Git conflict files list pannum.
 
 File open pannumbothu:
 
+```bash
 <<<<<<< HEAD
 
 current branch code
@@ -494,6 +495,7 @@ current branch code
 incoming branch code
 
 >>>>>>> expense-branch
+```
 
 Correct code manually select pannunga.
 
