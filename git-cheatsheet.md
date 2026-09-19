@@ -485,7 +485,7 @@ Git conflict files list pannum.
 
 File open pannumbothu:
 
-```bash
+```text
 <<<<<<< HEAD
 
 current branch code
