@@ -1,211 +1,840 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A practical Git commands reference and cheatsheet for everyday Git workflows.">
+    <meta
+        name="description"
+        content="A practical Git commands reference and cheatsheet for everyday Git workflows."
+    >
+
+    <meta name="theme-color" content="#0b0f19">
 
     <title>Git Pettagam — Git Commands Reference</title>
-
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: [
-                            "Inter",
-                            "ui-sans-serif",
-                            "system-ui",
-                            "-apple-system",
-                            "BlinkMacSystemFont",
-                            "Segoe UI",
-                            "sans-serif"
-                        ],
-                        mono: [
-                            "JetBrains Mono",
-                            "Fira Code",
-                            "Consolas",
-                            "monospace"
-                        ]
-                    }
-                }
-            }
-        };
-    </script>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="site-shell">
+<div class="app">
 
+    <!-- Mobile overlay -->
+    <button
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        type="button"
+        aria-label="Close navigation"
+    ></button>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Git Pettagam navigation"
+    >
+
+        <div class="sidebar-header">
+
+            <a class="brand" href="#1-git-identity">
+                <span class="brand-mark">G</span>
+
+                <span class="brand-copy">
+                    <strong>Git Pettagam</strong>
+                    <small>Git Commands Reference</small>
+                </span>
+            </a>
+
+            <button
+                class="sidebar-close"
+                id="sidebarClose"
+                type="button"
+                aria-label="Close navigation"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="sidebar-toolbar">
+
+            <span class="sidebar-label">
+                Navigation
+            </span>
+
+            <span
+                class="section-count"
+                id="sectionCount"
+            >
+                0 sections
+            </span>
+
+        </div>
+
+        <nav
+            class="sidebar-nav"
+            id="sidebarNav"
+            aria-label="Sections"
+        >
+            <!-- Generated automatically from section headings -->
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <button
+                class="collapse-btn"
+                id="sidebarCollapse"
+                type="button"
+                aria-expanded="true"
+            >
+                <span class="collapse-icon">‹</span>
+                <span class="collapse-text">Collapse navigation</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN AREA
+    ========================== -->
+    <div class="main-shell">
+
+        <!-- Mobile top bar -->
+        <header class="mobile-header">
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="sidebar"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="mobile-brand">
+                <span class="brand-mark">G</span>
+
+                <div>
+                    <strong>Git Pettagam</strong>
+                    <small>Git Commands Reference</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             DESKTOP HEADER
+        ========================== -->
         <header class="site-header">
-            <div class="header-inner">
-                <div class="brand">
-                    <span class="brand-mark">G</span>
 
-                    <div>
-                        <h1>Git Pettagam</h1>
-                        <p>Git Commands Reference</p>
-                    </div>
+            <div class="header-content">
+
+                <div>
+                    <span class="eyebrow">
+                        DAILY GIT REFERENCE
+                    </span>
+
+                    <h1>
+                        Git Pettagam
+                    </h1>
+
+                    <p>
+                        Practical Git commands for everyday development.
+                    </p>
                 </div>
 
                 <div class="header-meta">
-                    <span>43 Sections</span>
-                    <span>Daily Reference</span>
+
+                    <div>
+                        <strong id="headerSectionCount">
+                            0
+                        </strong>
+                        <span>Sections</span>
+                    </div>
+
+                    <div>
+                        <strong>Git</strong>
+                        <span>Reference</span>
+                    </div>
+
                 </div>
+
             </div>
+
         </header>
-        <div class="layout">
-            <main class="content">
-                <!-- existing 43 sections -->
-            </main>
-        </div>
 
-        <nav class="floating-nav" aria-label="Quick Navigation">
-            <div class="floating-nav-inner">
-                <div class="floating-nav-title">
-                    <span>Git Pettagam</span>
-                    <small>Navigation</small>
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+        <main
+            class="content"
+            id="content"
+        >
+
+            <!--
+            ============================================================
+            KEEP YOUR EXISTING 43 SECTIONS HERE
+            ============================================================
+
+            IMPORTANT:
+
+            Do NOT create navigation links manually.
+
+            Example:
+
+            <section id="1-git-identity">
+                <h2>1. Git Identity</h2>
+                ...
+            </section>
+
+            <section id="2-check-current-repository-status">
+                <h2>2. Check Current Repository Status</h2>
+                ...
+            </section>
+
+            ...
+
+            <section id="43-golden-rule">
+                <h2>43. Golden Rule</h2>
+                ...
+            </section>
+
+            <section id="git-command-safety-guide">
+                <h2>Git Command Safety Guide</h2>
+                ...
+            </section>
+
+            <section id="final-reminder">
+                <h2>Final Reminder</h2>
+                ...
+            </section>
+
+            ============================================================
+            -->
+
+            <!-- ========================================================
+                 YOUR EXISTING CONTENT START
+                 ======================================================== -->
+
+            <section id="1-git-identity">
+                <h2>1. Git Identity</h2>
+
+                <h3>Global Identity</h3>
+
+                <p>Machine-level default identity:</p>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --global user.name "Your Name"</code></pre>
                 </div>
 
-                <div class="floating-nav-scroll">
-                    <a href="#1-git-identity">1. Git Identity</a>
-                    <a href="#2-check-current-repository-status">2. Check Current Repository Status</a>
-                    <a href="#3-check-current-branch">3. Check Current Branch</a>
-                    <a href="#4-create-new-branch">4. Create New Branch</a>
-                    <a href="#5-switch-branch">5. Switch Branch</a>
-                    <a href="#6-check-remote-repository">6. Check Remote Repository</a>
-                    <a href="#7-get-latest-changes-from-remote">7. Get Latest Changes from Remote</a>
-                    <a href="#8-check-changes">8. Check Changes</a>
-                    <a href="#9-restore-discard-local-changes">9. Restore / Discard Local Changes</a>
-                    <a href="#10-unstage-a-file">10. Unstage a File</a>
-                    <a href="#11-get-one-file-from-another-branch">11. Get One File from Another Branch</a>
-                    <a href="#12-stage-changes">12. Stage Changes</a>
-                    <a href="#13-commit-changes">13. Commit Changes</a>
-                    <a href="#14-push-branch">14. Push Branch</a>
-                    <a href="#15-typical-feature-development-flow">15. Typical Feature Development Flow</a>
-                    <a href="#16-bring-latest-main-into-your-feature-branch">16. Bring Latest Main into Your Feature
-                        Branch</a>
-                    <a href="#17-merge-feature-branch-into-main">17. Merge Feature Branch into Main</a>
-                    <a href="#18-merge-conflict">18. Merge Conflict</a>
-                    <a href="#19-abort-a-merge">19. Abort a Merge</a>
-                    <a href="#20-abort-rebase">20. Abort Rebase</a>
-                    <a href="#21-view-commit-history">21. View Commit History</a>
-                    <a href="#22-check-a-specific-commit">22. Check a Specific Commit</a>
-                    <a href="#23-amend-last-commit">23. Amend Last Commit</a>
-                    <a href="#24-revert-a-commit">24. Revert a Commit</a>
-                    <a href="#25-reset">25. Reset</a>
-                    <a href="#26-recover-lost-changes-commits">26. Recover Lost Changes / Commits</a>
-                    <a href="#27-stash">27. Stash</a>
-                    <a href="#28-delete-branch">28. Delete Branch</a>
-                    <a href="#29-rename-current-branch">29. Rename Current Branch</a>
-                    <a href="#30-compare-branches">30. Compare Branches</a>
-                    <a href="#31-see-which-files-changed">31. See Which Files Changed</a>
-                    <a href="#32-remove-untracked-files">32. Remove Untracked Files</a>
-                    <a href="#33-pull-before-starting-work">33. Pull Before Starting Work</a>
-                    <a href="#34-before-commit-checklist">34. Before Commit Checklist</a>
-                    <a href="#35-before-push-checklist">35. Before Push Checklist</a>
-                    <a href="#36-if-you-accidentally-added-a-secret">36. If You Accidentally Added a Secret</a>
-                    <a href="#37-check-ignored-files">37. Check Ignored Files</a>
-                    <a href="#38-common-git-commands-quick-reference">38. Common Git Commands – Quick Reference</a>
-                    <a href="#39-nano-editor">39. Nano Editor</a>
-                    <a href="#40-vim-editor">40. Vim Editor</a>
-                    <a href="#41-recommended-daily-workflow">41. Recommended Daily Workflow</a>
-                    <a href="#42-important-difference">42. Important Difference</a>
-                    <a href="#43-golden-rule">43. Golden Rule</a>
-                    <a href="#git-command-safety-guide">Git Command Safety Guide</a>
-                    <a href="#final-reminder">Final Reminder</a>
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --global user.email "your@email.com"</code></pre>
                 </div>
-            </div>
-        </nav>
+
+                <h3>Check Global Identity</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --global user.name</code></pre>
+                </div>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --global user.email</code></pre>
+                </div>
+
+                <hr>
+
+                <h3>Repository-specific Identity</h3>
+
+                <p>
+                    Personal project-ku personal Git account use panna:
+                </p>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --local user.name "Your Personal Name"</code></pre>
+                </div>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --local user.email "your-personal@email.com"</code></pre>
+                </div>
+
+                <h3>Check Local Identity</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --local user.name</code></pre>
+                </div>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --local user.email</code></pre>
+                </div>
+
+                <hr>
+
+                <h3>Check Which Config Is Actually Being Used</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --show-origin --get user.name</code></pre>
+                </div>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --show-origin --get user.email</code></pre>
+                </div>
+
+                <h3>Full Local Config</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --local --list</code></pre>
+                </div>
+
+                <h3>Full Global Config</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git config --global --list</code></pre>
+                </div>
+
+                <blockquote>
+                    <code>(END)</code> vandha terminal-la <code>q</code> press pannunga.
+                </blockquote>
+            </section>
+
+
+            <!--
+            IMPORTANT:
+
+            Inga irundhu un current sections:
+
+            2. Check Current Repository Status
+            3. Check Current Branch
+            4. Create New Branch
+            ...
+            43. Golden Rule
+            Git Command Safety Guide
+            Final Reminder
+
+            EXACT-A same content-ah paste pannunga.
+
+            Navigation manually add panna vendam.
+            JS automatically generate pannum.
+            -->
+
+
+            <!-- Example remaining section structure -->
+
+            <section id="2-check-current-repository-status">
+                <h2>2. Check Current Repository Status</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">Copy</button>
+                    </div>
+                    <pre><code>git status</code></pre>
+                </div>
+
+                <p>Idhu current working tree-la:</p>
+
+                <ul>
+                    <li>modified files</li>
+                    <li>deleted files</li>
+                    <li>untracked files</li>
+                    <li>staged files</li>
+                    <li>current branch</li>
+                </ul>
+
+                <p>ellam kaamikum.</p>
+            </section>
+
+
+            <!--
+            YOUR ORIGINAL SECTIONS 3 - 43 + SAFETY GUIDE + FINAL REMINDER
+            GO HERE WITHOUT CHANGING THEIR CONTENT.
+            -->
+
+        </main>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+        <footer class="site-footer">
+            <span>Git Pettagam</span>
+            <span>•</span>
+            <span>Git Commands Reference</span>
+        </footer>
 
     </div>
 
-    <script>
-        document.querySelectorAll(".copy-btn").forEach((button) => {
-            button.addEventListener("click", async () => {
-                const code =
-                    button
-                        .closest(".code-wrap")
-                        ?.querySelector("pre code")
-                        ?.innerText || "";
+</div>
 
-                try {
-                    await navigator.clipboard.writeText(code);
 
-                    const oldText = button.textContent;
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+<script>
+(() => {
+    "use strict";
 
-                    button.textContent = "Copied";
-                    button.classList.add("is-copied");
+    const body = document.body;
+    const sidebar = document.getElementById("sidebar");
+    const sidebarNav = document.getElementById("sidebarNav");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
 
-                    setTimeout(() => {
-                        button.textContent = oldText;
-                        button.classList.remove("is-copied");
-                    }, 1100);
-                } catch {
-                    button.textContent = "Copy failed";
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebarClose = document.getElementById("sidebarClose");
+    const sidebarCollapse = document.getElementById("sidebarCollapse");
 
-                    setTimeout(() => {
-                        button.textContent = "Copy";
-                    }, 1100);
-                }
-            });
+    const content = document.getElementById("content");
+    const sectionCount = document.getElementById("sectionCount");
+    const headerSectionCount = document.getElementById("headerSectionCount");
+
+    const sections = [
+        ...content.querySelectorAll(":scope > section[id]")
+    ];
+
+    /*
+    ============================================================
+    NAVIGATION
+    ============================================================
+    */
+
+    const getSectionTitle = (section) => {
+        const heading = section.querySelector(":scope > h2");
+
+        if (!heading) {
+            return section.id
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, (char) => char.toUpperCase());
+        }
+
+        return heading.textContent
+            .replace(/\s+/g, " ")
+            .trim();
+    };
+
+
+    const createNav = () => {
+        const fragment = document.createDocumentFragment();
+
+        sections.forEach((section, index) => {
+            const link = document.createElement("a");
+
+            link.href = `#${section.id}`;
+            link.className = "nav-link";
+            link.dataset.section = section.id;
+
+            const number = document.createElement("span");
+            number.className = "nav-number";
+            number.textContent = String(index + 1).padStart(2, "0");
+
+            const title = document.createElement("span");
+            title.className = "nav-title";
+            title.textContent = getSectionTitle(section);
+
+            link.append(number, title);
+            fragment.appendChild(link);
         });
 
-        const navLinks = document.querySelectorAll(
-            ".floating-nav-scroll a"
+        sidebarNav.replaceChildren(fragment);
+
+        const count = sections.length;
+
+        sectionCount.textContent =
+            `${count} sections`;
+
+        headerSectionCount.textContent = count;
+    };
+
+
+    createNav();
+
+
+    /*
+    ============================================================
+    MOBILE SIDEBAR
+    ============================================================
+    */
+
+    const openSidebar = () => {
+        sidebar.classList.add("is-open");
+        sidebarOverlay.classList.add("is-visible");
+
+        menuBtn?.setAttribute(
+            "aria-expanded",
+            "true"
         );
 
-        const sections = document.querySelectorAll(
-            ".content section[id]"
+        body.classList.add("sidebar-open");
+    };
+
+
+    const closeSidebar = () => {
+        sidebar.classList.remove("is-open");
+        sidebarOverlay.classList.remove("is-visible");
+
+        menuBtn?.setAttribute(
+            "aria-expanded",
+            "false"
         );
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const visible = entries
-                    .filter((entry) => entry.isIntersecting)
-                    .sort(
-                        (a, b) =>
-                            b.intersectionRatio -
-                            a.intersectionRatio
-                    )[0];
+        body.classList.remove("sidebar-open");
+    };
 
-                if (!visible) return;
 
-                navLinks.forEach((link) => {
-                    link.classList.remove("active");
-                });
+    menuBtn?.addEventListener(
+        "click",
+        openSidebar
+    );
 
-                const activeLink = document.querySelector(
-                    `.floating-nav-scroll a[href="#${visible.target.id}"]`
+    sidebarClose?.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+    sidebarOverlay?.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+
+    /*
+    ============================================================
+    DESKTOP COLLAPSE
+    ============================================================
+    */
+
+    sidebarCollapse?.addEventListener(
+        "click",
+        () => {
+            const collapsed =
+                body.classList.toggle(
+                    "sidebar-collapsed"
                 );
 
-                activeLink?.classList.add("active");
+            sidebarCollapse.setAttribute(
+                "aria-expanded",
+                String(!collapsed)
+            );
+        }
+    );
 
-                activeLink?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest",
-                    inline: "center"
-                });
-            },
-            {
-                rootMargin: "-10% 0px -75% 0px",
-                threshold: [0, 0.2, 0.5]
+
+    /*
+    ============================================================
+    NAVIGATION CLICK
+    ============================================================
+    */
+
+    sidebarNav.addEventListener(
+        "click",
+        (event) => {
+            const link =
+                event.target.closest(".nav-link");
+
+            if (!link) return;
+
+            /*
+            Mobile-la link click pannina
+            sidebar automatic-ah close aagum.
+            */
+
+            if (
+                window.matchMedia(
+                    "(max-width: 900px)"
+                ).matches
+            ) {
+                closeSidebar();
             }
-        );
+        }
+    );
 
-        sections.forEach((section) => {
-            observer.observe(section);
+
+    /*
+    ============================================================
+    ACTIVE SECTION
+    ============================================================
+    */
+
+    const navLinks = () => [
+        ...sidebarNav.querySelectorAll(".nav-link")
+    ];
+
+
+    const setActiveSection = (id) => {
+        navLinks().forEach((link) => {
+            const active =
+                link.dataset.section === id;
+
+            link.classList.toggle(
+                "is-active",
+                active
+            );
+
+            if (active) {
+                link.setAttribute(
+                    "aria-current",
+                    "true"
+                );
+            } else {
+                link.removeAttribute(
+                    "aria-current"
+                );
+            }
         });
-    </script>
+    };
+
+
+    /*
+    IntersectionObserver:
+    currently visible section identify pannum.
+    */
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            const visibleEntries = entries
+                .filter(
+                    (entry) =>
+                        entry.isIntersecting
+                )
+                .sort(
+                    (a, b) =>
+                        b.intersectionRatio -
+                        a.intersectionRatio
+                );
+
+            if (!visibleEntries.length) {
+                return;
+            }
+
+            const active =
+                visibleEntries[0]
+                    .target;
+
+            setActiveSection(
+                active.id
+            );
+
+            const activeLink =
+                sidebarNav.querySelector(
+                    `[data-section="${CSS.escape(active.id)}"]`
+                );
+
+            /*
+            Sidebar scroll only.
+            Main page scroll aagadhu.
+            */
+
+            activeLink?.scrollIntoView({
+                block: "nearest",
+                behavior: "smooth"
+            });
+        },
+        {
+            root: null,
+
+            /*
+            Header area exclude pannrom.
+            */
+
+            rootMargin:
+                "-100px 0px -65% 0px",
+
+            threshold: [0, 0.2, 0.5, 0.8]
+        }
+    );
+
+
+    sections.forEach(
+        (section) =>
+            observer.observe(section)
+    );
+
+
+    /*
+    ============================================================
+    COPY BUTTON
+    ============================================================
+    */
+
+    document.addEventListener(
+        "click",
+        async (event) => {
+            const button =
+                event.target.closest(
+                    ".copy-btn"
+                );
+
+            if (!button) return;
+
+            const code =
+                button
+                    .closest(".code-wrap")
+                    ?.querySelector(
+                        "pre code"
+                    )
+                    ?.innerText || "";
+
+            if (!code) return;
+
+            const original =
+                button.textContent;
+
+            try {
+                await navigator.clipboard.writeText(
+                    code
+                );
+
+                button.textContent =
+                    "Copied";
+
+                button.classList.add(
+                    "is-copied"
+                );
+
+                window.setTimeout(
+                    () => {
+                        button.textContent =
+                            original;
+
+                        button.classList.remove(
+                            "is-copied"
+                        );
+                    },
+                    1200
+                );
+
+            } catch {
+                button.textContent =
+                    "Copy failed";
+
+                window.setTimeout(
+                    () => {
+                        button.textContent =
+                            original;
+                    },
+                    1200
+                );
+            }
+        }
+    );
+
+
+    /*
+    ============================================================
+    ESCAPE
+    ============================================================
+    */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+            if (event.key !== "Escape") {
+                return;
+            }
+
+            if (
+                sidebar.classList.contains(
+                    "is-open"
+                )
+            ) {
+                closeSidebar();
+            }
+        }
+    );
+
+
+    /*
+    ============================================================
+    RESIZE
+    ============================================================
+    */
+
+    window.addEventListener(
+        "resize",
+        () => {
+            if (
+                window.matchMedia(
+                    "(min-width: 901px)"
+                ).matches
+            ) {
+                closeSidebar();
+            }
+        },
+        { passive: true }
+    );
+
+
+    /*
+    ============================================================
+    INITIAL ACTIVE SECTION
+    ============================================================
+    */
+
+    if (sections.length) {
+        setActiveSection(
+            sections[0].id
+        );
+    }
+
+})();
+</script>
 
 </body>
-
 </html>
