@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git Cheatsheet</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <header class="hero">
+    <h1>Git Cheatsheet</h1>
+    <p>Daily development reference for office and personal repositories. Use the command blocks directly; each block has its own Copy action.</p>
+  </header>
+
+  <div class="layout">
+    <nav aria-label="Quick Navigation">
+      <a href="#1-git-identity">1. Git Identity</a><a href="#2-check-current-repository-status">2. Check Current Repository Status</a><a href="#3-check-current-branch">3. Check Current Branch</a><a href="#4-create-new-branch">4. Create New Branch</a><a href="#5-switch-branch">5. Switch Branch</a><a href="#6-check-remote-repository">6. Check Remote Repository</a><a href="#7-get-latest-changes-from-remote">7. Get Latest Changes from Remote</a><a href="#8-check-changes">8. Check Changes</a><a href="#9-restore-discard-local-changes">9. Restore / Discard Local Changes</a><a href="#10-unstage-a-file">10. Unstage a File</a><a href="#11-get-one-file-from-another-branch">11. Get One File from Another Branch</a><a href="#12-stage-changes">12. Stage Changes</a><a href="#13-commit-changes">13. Commit Changes</a><a href="#14-push-branch">14. Push Branch</a><a href="#15-typical-feature-development-flow">15. Typical Feature Development Flow</a><a href="#16-bring-latest-main-into-your-feature-branch">16. Bring Latest Main into Your Feature Branch</a><a href="#17-merge-feature-branch-into-main">17. Merge Feature Branch into Main</a><a href="#18-merge-conflict">18. Merge Conflict</a><a href="#19-abort-a-merge">19. Abort a Merge</a><a href="#20-abort-rebase">20. Abort Rebase</a><a href="#21-view-commit-history">21. View Commit History</a><a href="#22-check-a-specific-commit">22. Check a Specific Commit</a><a href="#23-amend-last-commit">23. Amend Last Commit</a><a href="#24-revert-a-commit">24. Revert a Commit</a><a href="#25-reset">25. Reset</a><a href="#26-recover-lost-changes-commits">26. Recover Lost Changes / Commits</a><a href="#27-stash">27. Stash</a><a href="#28-delete-branch">28. Delete Branch</a><a href="#29-rename-current-branch">29. Rename Current Branch</a><a href="#30-compare-branches">30. Compare Branches</a><a href="#31-see-which-files-changed">31. See Which Files Changed</a><a href="#32-remove-untracked-files">32. Remove Untracked Files</a><a href="#33-pull-before-starting-work">33. Pull Before Starting Work</a><a href="#34-before-commit-checklist">34. Before Commit Checklist</a><a href="#35-before-push-checklist">35. Before Push Checklist</a><a href="#36-if-you-accidentally-added-a-secret">36. If You Accidentally Added a Secret</a><a href="#37-check-ignored-files">37. Check Ignored Files</a><a href="#38-common-git-commands-quick-reference">38. Common Git Commands – Quick Reference</a><a href="#39-nano-editor">39. Nano Editor</a><a href="#40-vim-editor">40. Vim Editor</a><a href="#41-recommended-daily-workflow">41. Recommended Daily Workflow</a><a href="#42-important-difference">42. Important Difference</a><a href="#43-golden-rule">43. Golden Rule</a><a href="#git-command-safety-guide">Git Command Safety Guide</a><a href="#final-reminder">Final Reminder</a>
+    </nav>
+
+    <main>
+      <!-- EXISTING GIT CHEATSHEET CONTENT START -->
+      <!-- Unchanged content from your uploaded file goes here. -->
+    </main>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll(".copy-btn").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const code = button.closest(".code-wrap")?.querySelector("pre code")?.innerText || "";
+
+    try {
+      await navigator.clipboard.writeText(code);
+
+      const oldText = button.textContent;
+      button.textContent = "Copied";
+
+      setTimeout(() => {
+        button.textContent = oldText;
+      }, 1100);
+    } catch {
+      button.textContent = "Copy failed";
+
+      setTimeout(() => {
+        button.textContent = "Copy";
+      }, 1100);
+    }
+  });
+});
+</script>
+</body>
+</html>
