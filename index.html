@@ -20,7 +20,6 @@
 
 <div class="app">
 
-    <!-- Mobile overlay -->
     <button
         class="sidebar-overlay"
         id="sidebarOverlay"
@@ -28,17 +27,12 @@
         aria-label="Close navigation"
     ></button>
 
-    <!-- =========================
-         SIDEBAR
-    ========================== -->
     <aside
         class="sidebar"
         id="sidebar"
         aria-label="Git Pettagam navigation"
     >
-
         <div class="sidebar-header">
-
             <a class="brand" href="#1-git-identity">
                 <span class="brand-mark">G</span>
 
@@ -56,14 +50,10 @@
             >
                 ×
             </button>
-
         </div>
 
         <div class="sidebar-toolbar">
-
-            <span class="sidebar-label">
-                Navigation
-            </span>
+            <span class="sidebar-label">Navigation</span>
 
             <span
                 class="section-count"
@@ -71,19 +61,15 @@
             >
                 0 sections
             </span>
-
         </div>
 
         <nav
             class="sidebar-nav"
             id="sidebarNav"
             aria-label="Sections"
-        >
-            <!-- Generated automatically from section headings -->
-        </nav>
+        ></nav>
 
         <div class="sidebar-footer">
-
             <button
                 class="collapse-btn"
                 id="sidebarCollapse"
@@ -91,22 +77,16 @@
                 aria-expanded="true"
             >
                 <span class="collapse-icon">‹</span>
-                <span class="collapse-text">Collapse navigation</span>
+                <span class="collapse-text">
+                    Collapse navigation
+                </span>
             </button>
-
         </div>
-
     </aside>
 
-
-    <!-- =========================
-         MAIN AREA
-    ========================== -->
     <div class="main-shell">
 
-        <!-- Mobile top bar -->
         <header class="mobile-header">
-
             <button
                 class="menu-btn"
                 id="menuBtn"
@@ -128,15 +108,9 @@
                     <small>Git Commands Reference</small>
                 </div>
             </div>
-
         </header>
 
-
-        <!-- =========================
-             DESKTOP HEADER
-        ========================== -->
         <header class="site-header">
-
             <div class="header-content">
 
                 <div>
@@ -144,9 +118,7 @@
                         DAILY GIT REFERENCE
                     </span>
 
-                    <h1>
-                        Git Pettagam
-                    </h1>
+                    <h1>Git Pettagam</h1>
 
                     <p>
                         Practical Git commands for everyday development.
@@ -156,9 +128,7 @@
                 <div class="header-meta">
 
                     <div>
-                        <strong id="headerSectionCount">
-                            0
-                        </strong>
+                        <strong id="headerSectionCount">0</strong>
                         <span>Sections</span>
                     </div>
 
@@ -170,83 +140,43 @@
                 </div>
 
             </div>
-
         </header>
 
+        <main class="content" id="content">
 
-        <!-- =========================
-             CONTENT
-        ========================== -->
-        <main
-            class="content"
-            id="content"
-        >
-
-            <!--
-            ============================================================
-            KEEP YOUR EXISTING 43 SECTIONS HERE
-            ============================================================
-
-            IMPORTANT:
-
-            Do NOT create navigation links manually.
-
-            Example:
+            <!-- =====================================================
+                 SECTION 1
+            ====================================================== -->
 
             <section id="1-git-identity">
-                <h2>1. Git Identity</h2>
-                ...
-            </section>
 
-            <section id="2-check-current-repository-status">
-                <h2>2. Check Current Repository Status</h2>
-                ...
-            </section>
-
-            ...
-
-            <section id="43-golden-rule">
-                <h2>43. Golden Rule</h2>
-                ...
-            </section>
-
-            <section id="git-command-safety-guide">
-                <h2>Git Command Safety Guide</h2>
-                ...
-            </section>
-
-            <section id="final-reminder">
-                <h2>Final Reminder</h2>
-                ...
-            </section>
-
-            ============================================================
-            -->
-
-            <!-- ========================================================
-                 YOUR EXISTING CONTENT START
-                 ======================================================== -->
-
-            <section id="1-git-identity">
                 <h2>1. Git Identity</h2>
 
                 <h3>Global Identity</h3>
 
-                <p>Machine-level default identity:</p>
+                <p>
+                    Machine-level default identity:
+                </p>
 
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --global user.name "Your Name"</code></pre>
                 </div>
 
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --global user.email "your@email.com"</code></pre>
                 </div>
 
@@ -255,16 +185,22 @@
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --global user.name</code></pre>
                 </div>
 
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --global user.email</code></pre>
                 </div>
 
@@ -279,16 +215,22 @@
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --local user.name "Your Personal Name"</code></pre>
                 </div>
 
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --local user.email "your-personal@email.com"</code></pre>
                 </div>
 
@@ -297,16 +239,22 @@
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --local user.name</code></pre>
                 </div>
 
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --local user.email</code></pre>
                 </div>
 
@@ -317,16 +265,22 @@
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --show-origin --get user.name</code></pre>
                 </div>
 
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --show-origin --get user.email</code></pre>
                 </div>
 
@@ -335,8 +289,11 @@
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --local --list</code></pre>
                 </div>
 
@@ -345,51 +302,44 @@
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git config --global --list</code></pre>
                 </div>
 
                 <blockquote>
-                    <code>(END)</code> vandha terminal-la <code>q</code> press pannunga.
+                    <code>(END)</code> vandha terminal-la
+                    <code>q</code> press pannunga.
                 </blockquote>
+
             </section>
 
 
-            <!--
-            IMPORTANT:
-
-            Inga irundhu un current sections:
-
-            2. Check Current Repository Status
-            3. Check Current Branch
-            4. Create New Branch
-            ...
-            43. Golden Rule
-            Git Command Safety Guide
-            Final Reminder
-
-            EXACT-A same content-ah paste pannunga.
-
-            Navigation manually add panna vendam.
-            JS automatically generate pannum.
-            -->
-
-
-            <!-- Example remaining section structure -->
+            <!-- =====================================================
+                 SECTION 2
+            ====================================================== -->
 
             <section id="2-check-current-repository-status">
+
                 <h2>2. Check Current Repository Status</h2>
 
                 <div class="code-wrap">
                     <div class="code-head">
                         <span>bash</span>
-                        <button type="button" class="copy-btn">Copy</button>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
                     </div>
+
                     <pre><code>git status</code></pre>
                 </div>
 
-                <p>Idhu current working tree-la:</p>
+                <p>
+                    Idhu current working tree-la:
+                </p>
 
                 <ul>
                     <li>modified files</li>
@@ -399,21 +349,1158 @@
                     <li>current branch</li>
                 </ul>
 
-                <p>ellam kaamikum.</p>
+                <p>
+                    ellam kaamikum.
+                </p>
+
             </section>
 
 
-            <!--
-            YOUR ORIGINAL SECTIONS 3 - 43 + SAFETY GUIDE + FINAL REMINDER
-            GO HERE WITHOUT CHANGING THEIR CONTENT.
-            -->
+            <!-- =====================================================
+                 SECTION 3
+            ====================================================== -->
+
+            <section id="3-check-current-branch">
+
+                <h2>3. Check Current Branch</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git branch --show-current</code></pre>
+                </div>
+
+                <p>
+                    Current-ah endha branch-la irukkinga-nu check panna use pannalaam.
+                </p>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 4
+            ====================================================== -->
+
+            <section id="4-create-new-branch">
+
+                <h2>4. Create New Branch</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git branch feature-name</code></pre>
+                </div>
+
+                <h3>Create and Switch</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git switch -c feature-name</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 5
+            ====================================================== -->
+
+            <section id="5-switch-branch">
+
+                <h2>5. Switch Branch</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git switch branch-name</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 6
+            ====================================================== -->
+
+            <section id="6-list-branches">
+
+                <h2>6. List Branches</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git branch</code></pre>
+                </div>
+
+                <h3>List Remote Branches</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git branch -r</code></pre>
+                </div>
+
+                <h3>List All Branches</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git branch -a</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 7
+            ====================================================== -->
+
+            <section id="7-add-files">
+
+                <h2>7. Add Files to Staging</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git add filename</code></pre>
+                </div>
+
+                <h3>Add All Changes</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git add .</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 8
+            ====================================================== -->
+
+            <section id="8-commit-changes">
+
+                <h2>8. Commit Changes</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git commit -m "Add feature"</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 9
+            ====================================================== -->
+
+            <section id="9-view-commit-history">
+
+                <h2>9. View Commit History</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git log</code></pre>
+                </div>
+
+                <h3>Compact History</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git log --oneline</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 10
+            ====================================================== -->
+
+            <section id="10-view-differences">
+
+                <h2>10. View Differences</h2>
+
+                <h3>Working Tree Changes</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git diff</code></pre>
+                </div>
+
+                <h3>Staged Changes</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git diff --staged</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 11
+            ====================================================== -->
+
+            <section id="11-unstage-files">
+
+                <h2>11. Unstage Files</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git restore --staged filename</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 12
+            ====================================================== -->
+
+            <section id="12-discard-file-changes">
+
+                <h2>12. Discard File Changes</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git restore filename</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 13
+            ====================================================== -->
+
+            <section id="13-rename-file">
+
+                <h2>13. Rename File</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git mv old-name new-name</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 14
+            ====================================================== -->
+
+            <section id="14-delete-file">
+
+                <h2>14. Delete File</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git rm filename</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 15
+            ====================================================== -->
+
+            <section id="15-add-remote">
+
+                <h2>15. Add Remote Repository</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git remote add origin https://github.com/user/repository.git</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 16
+            ====================================================== -->
+
+            <section id="16-check-remote">
+
+                <h2>16. Check Remote</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git remote -v</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 17
+            ====================================================== -->
+
+            <section id="17-pull-changes">
+
+                <h2>17. Pull Changes</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git pull</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 18
+            ====================================================== -->
+
+            <section id="18-push-changes">
+
+                <h2>18. Push Changes</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git push</code></pre>
+                </div>
+
+                <h3>First Push</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git push -u origin branch-name</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 19
+            ====================================================== -->
+
+            <section id="19-merge-branch">
+
+                <h2>19. Merge Branch</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git switch main
+git merge feature-name</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 20
+            ====================================================== -->
+
+            <section id="20-delete-branch">
+
+                <h2>20. Delete Branch</h2>
+
+                <h3>Local Branch</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git branch -d branch-name</code></pre>
+                </div>
+
+                <h3>Force Delete</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git branch -D branch-name</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 21
+            ====================================================== -->
+
+            <section id="21-fetch-changes">
+
+                <h2>21. Fetch Changes</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git fetch</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 22
+            ====================================================== -->
+
+            <section id="22-stash-changes">
+
+                <h2>22. Stash Changes</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git stash</code></pre>
+                </div>
+
+                <h3>List Stashes</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git stash list</code></pre>
+                </div>
+
+                <h3>Apply Latest Stash</h3>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git stash pop</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 23
+            ====================================================== -->
+
+            <section id="23-create-tag">
+
+                <h2>23. Create Tag</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git tag v1.0.0</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 24
+            ====================================================== -->
+
+            <section id="24-list-tags">
+
+                <h2>24. List Tags</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git tag</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 25
+            ====================================================== -->
+
+            <section id="25-show-commit">
+
+                <h2>25. Show Commit</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git show commit-hash</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 26
+            ====================================================== -->
+
+            <section id="26-revert-commit">
+
+                <h2>26. Revert Commit</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git revert commit-hash</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 27
+            ====================================================== -->
+
+            <section id="27-reset-commit">
+
+                <h2>27. Reset Commit</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git reset --soft HEAD~1</code></pre>
+                </div>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git reset --hard HEAD~1</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 28
+            ====================================================== -->
+
+            <section id="28-amend-commit">
+
+                <h2>28. Amend Last Commit</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git commit --amend --no-edit</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 29
+            ====================================================== -->
+
+            <section id="29-cherry-pick">
+
+                <h2>29. Cherry-pick Commit</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git cherry-pick commit-hash</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 30
+            ====================================================== -->
+
+            <section id="30-rebase">
+
+                <h2>30. Rebase</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git rebase main</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 31
+            ====================================================== -->
+
+            <section id="31-interactive-rebase">
+
+                <h2>31. Interactive Rebase</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git rebase -i HEAD~3</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 32
+            ====================================================== -->
+
+            <section id="32-find-commit">
+
+                <h2>32. Find Commit</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git log --oneline --all --grep="keyword"</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 33
+            ====================================================== -->
+
+            <section id="33-blame">
+
+                <h2>33. Git Blame</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git blame filename</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 34
+            ====================================================== -->
+
+            <section id="34-clean-untracked-files">
+
+                <h2>34. Clean Untracked Files</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git clean -n</code></pre>
+                </div>
+
+                <p>
+                    First dry-run pannitu files check pannunga.
+                </p>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git clean -f</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 35
+            ====================================================== -->
+
+            <section id="35-clone-repository">
+
+                <h2>35. Clone Repository</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git clone https://github.com/user/repository.git</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 36
+            ====================================================== -->
+
+            <section id="36-initialize-repository">
+
+                <h2>36. Initialize Repository</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git init</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 37
+            ====================================================== -->
+
+            <section id="37-compare-branches">
+
+                <h2>37. Compare Branches</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git diff main..feature-name</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 38
+            ====================================================== -->
+
+            <section id="38-abort-merge">
+
+                <h2>38. Abort Merge</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git merge --abort</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 39
+            ====================================================== -->
+
+            <section id="39-abort-rebase">
+
+                <h2>39. Abort Rebase</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git rebase --abort</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 40
+            ====================================================== -->
+
+            <section id="40-check-remote-url">
+
+                <h2>40. Check Remote URL</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git remote get-url origin</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 41
+            ====================================================== -->
+
+            <section id="41-change-remote-url">
+
+                <h2>41. Change Remote URL</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git remote set-url origin https://github.com/user/repository.git</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 42
+            ====================================================== -->
+
+            <section id="42-push-force-with-lease">
+
+                <h2>42. Safe Force Push</h2>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git push --force-with-lease</code></pre>
+                </div>
+
+                <blockquote>
+                    Shared branch-la force push use pannumbodhu extra care venum.
+                </blockquote>
+
+            </section>
+
+
+            <!-- =====================================================
+                 SECTION 43
+            ====================================================== -->
+
+            <section id="43-golden-rule">
+
+                <h2>43. Golden Rule</h2>
+
+                <blockquote>
+                    Commit pannradhukku munnaadi status and diff check pannunga.
+                </blockquote>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git status
+git diff
+git diff --staged</code></pre>
+                </div>
+
+            </section>
+
+
+            <!-- =====================================================
+                 GIT COMMAND SAFETY GUIDE
+            ====================================================== -->
+
+            <section id="git-command-safety-guide">
+
+                <h2>Git Command Safety Guide</h2>
+
+                <h3>Safe Commands</h3>
+
+                <ul>
+                    <li><code>git status</code></li>
+                    <li><code>git log</code></li>
+                    <li><code>git diff</code></li>
+                    <li><code>git branch</code></li>
+                    <li><code>git remote -v</code></li>
+                    <li><code>git fetch</code></li>
+                </ul>
+
+                <h3>Commands Requiring Care</h3>
+
+                <ul>
+                    <li><code>git reset --hard</code></li>
+                    <li><code>git clean -f</code></li>
+                    <li><code>git push --force</code></li>
+                    <li><code>git branch -D</code></li>
+                </ul>
+
+                <blockquote>
+                    Destructive command execute panna munnaadi
+                    <code>git status</code> and
+                    <code>git diff</code> check pannunga.
+                </blockquote>
+
+            </section>
+
+
+            <!-- =====================================================
+                 FINAL REMINDER
+            ====================================================== -->
+
+            <section id="final-reminder">
+
+                <h2>Final Reminder</h2>
+
+                <p>
+                    Git command execute panna munnaadi command enna change
+                    pannum-nu understand pannitu execute pannunga.
+                </p>
+
+                <div class="code-wrap">
+                    <div class="code-head">
+                        <span>bash</span>
+                        <button type="button" class="copy-btn">
+                            Copy
+                        </button>
+                    </div>
+
+                    <pre><code>git status
+git diff
+git diff --staged</code></pre>
+                </div>
+
+            </section>
 
         </main>
 
 
-        <!-- =========================
-             FOOTER
-        ========================== -->
         <footer class="site-footer">
             <span>Git Pettagam</span>
             <span>•</span>
@@ -425,9 +1512,6 @@
 </div>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================== -->
 <script>
 (() => {
     "use strict";
@@ -449,12 +1533,6 @@
         ...content.querySelectorAll(":scope > section[id]")
     ];
 
-    /*
-    ============================================================
-    NAVIGATION
-    ============================================================
-    */
-
     const getSectionTitle = (section) => {
         const heading = section.querySelector(":scope > h2");
 
@@ -468,7 +1546,6 @@
             .replace(/\s+/g, " ")
             .trim();
     };
-
 
     const createNav = () => {
         const fragment = document.createDocumentFragment();
@@ -496,21 +1573,11 @@
 
         const count = sections.length;
 
-        sectionCount.textContent =
-            `${count} sections`;
-
+        sectionCount.textContent = `${count} sections`;
         headerSectionCount.textContent = count;
     };
 
-
     createNav();
-
-
-    /*
-    ============================================================
-    MOBILE SIDEBAR
-    ============================================================
-    */
 
     const openSidebar = () => {
         sidebar.classList.add("is-open");
@@ -524,7 +1591,6 @@
         body.classList.add("sidebar-open");
     };
 
-
     const closeSidebar = () => {
         sidebar.classList.remove("is-open");
         sidebarOverlay.classList.remove("is-visible");
@@ -536,7 +1602,6 @@
 
         body.classList.remove("sidebar-open");
     };
-
 
     menuBtn?.addEventListener(
         "click",
@@ -553,20 +1618,12 @@
         closeSidebar
     );
 
-
-    /*
-    ============================================================
-    DESKTOP COLLAPSE
-    ============================================================
-    */
-
     sidebarCollapse?.addEventListener(
         "click",
         () => {
-            const collapsed =
-                body.classList.toggle(
-                    "sidebar-collapsed"
-                );
+            const collapsed = body.classList.toggle(
+                "sidebar-collapsed"
+            );
 
             sidebarCollapse.setAttribute(
                 "aria-expanded",
@@ -575,25 +1632,12 @@
         }
     );
 
-
-    /*
-    ============================================================
-    NAVIGATION CLICK
-    ============================================================
-    */
-
     sidebarNav.addEventListener(
         "click",
         (event) => {
-            const link =
-                event.target.closest(".nav-link");
+            const link = event.target.closest(".nav-link");
 
             if (!link) return;
-
-            /*
-            Mobile-la link click pannina
-            sidebar automatic-ah close aagum.
-            */
 
             if (
                 window.matchMedia(
@@ -605,20 +1649,12 @@
         }
     );
 
-
-    /*
-    ============================================================
-    ACTIVE SECTION
-    ============================================================
-    */
-
-    const navLinks = () => [
+    const getNavLinks = () => [
         ...sidebarNav.querySelectorAll(".nav-link")
     ];
 
-
     const setActiveSection = (id) => {
-        navLinks().forEach((link) => {
+        getNavLinks().forEach((link) => {
             const active =
                 link.dataset.section === id;
 
@@ -640,12 +1676,6 @@
         });
     };
 
-
-    /*
-    IntersectionObserver:
-    currently visible section identify pannum.
-    */
-
     const observer = new IntersectionObserver(
         (entries) => {
             const visibleEntries = entries
@@ -659,27 +1689,17 @@
                         a.intersectionRatio
                 );
 
-            if (!visibleEntries.length) {
-                return;
-            }
+            if (!visibleEntries.length) return;
 
             const active =
-                visibleEntries[0]
-                    .target;
+                visibleEntries[0].target;
 
-            setActiveSection(
-                active.id
-            );
+            setActiveSection(active.id);
 
             const activeLink =
                 sidebarNav.querySelector(
                     `[data-section="${CSS.escape(active.id)}"]`
                 );
-
-            /*
-            Sidebar scroll only.
-            Main page scroll aagadhu.
-            */
 
             activeLink?.scrollIntoView({
                 block: "nearest",
@@ -688,47 +1708,27 @@
         },
         {
             root: null,
-
-            /*
-            Header area exclude pannrom.
-            */
-
-            rootMargin:
-                "-100px 0px -65% 0px",
-
+            rootMargin: "-100px 0px -65% 0px",
             threshold: [0, 0.2, 0.5, 0.8]
         }
     );
 
-
     sections.forEach(
-        (section) =>
-            observer.observe(section)
+        (section) => observer.observe(section)
     );
-
-
-    /*
-    ============================================================
-    COPY BUTTON
-    ============================================================
-    */
 
     document.addEventListener(
         "click",
         async (event) => {
             const button =
-                event.target.closest(
-                    ".copy-btn"
-                );
+                event.target.closest(".copy-btn");
 
             if (!button) return;
 
             const code =
                 button
                     .closest(".code-wrap")
-                    ?.querySelector(
-                        "pre code"
-                    )
+                    ?.querySelector("pre code")
                     ?.innerText || "";
 
             if (!code) return;
@@ -737,74 +1737,38 @@
                 button.textContent;
 
             try {
-                await navigator.clipboard.writeText(
-                    code
-                );
+                await navigator.clipboard.writeText(code);
 
-                button.textContent =
-                    "Copied";
+                button.textContent = "Copied";
+                button.classList.add("is-copied");
 
-                button.classList.add(
-                    "is-copied"
-                );
-
-                window.setTimeout(
-                    () => {
-                        button.textContent =
-                            original;
-
-                        button.classList.remove(
-                            "is-copied"
-                        );
-                    },
-                    1200
-                );
+                window.setTimeout(() => {
+                    button.textContent = original;
+                    button.classList.remove("is-copied");
+                }, 1200);
 
             } catch {
-                button.textContent =
-                    "Copy failed";
+                button.textContent = "Copy failed";
 
-                window.setTimeout(
-                    () => {
-                        button.textContent =
-                            original;
-                    },
-                    1200
-                );
+                window.setTimeout(() => {
+                    button.textContent = original;
+                }, 1200);
             }
         }
     );
 
-
-    /*
-    ============================================================
-    ESCAPE
-    ============================================================
-    */
-
     document.addEventListener(
         "keydown",
         (event) => {
-            if (event.key !== "Escape") {
-                return;
-            }
+            if (event.key !== "Escape") return;
 
             if (
-                sidebar.classList.contains(
-                    "is-open"
-                )
+                sidebar.classList.contains("is-open")
             ) {
                 closeSidebar();
             }
         }
     );
-
-
-    /*
-    ============================================================
-    RESIZE
-    ============================================================
-    */
 
     window.addEventListener(
         "resize",
@@ -820,17 +1784,8 @@
         { passive: true }
     );
 
-
-    /*
-    ============================================================
-    INITIAL ACTIVE SECTION
-    ============================================================
-    */
-
     if (sections.length) {
-        setActiveSection(
-            sections[0].id
-        );
+        setActiveSection(sections[0].id);
     }
 
 })();
