@@ -62,21 +62,20 @@
                 </div>
             </div>
         </header>
-
         <div class="layout">
+            <main class="content">
+                <!-- existing 43 sections -->
+            </main>
+        </div>
 
-            <nav class="quick-nav" aria-label="Quick Navigation">
-
-                <div class="nav-header">
-                    <span class="nav-title">Quick Navigation</span>
-                    <span class="nav-count">43</span>
+        <nav class="floating-nav" aria-label="Quick Navigation">
+            <div class="floating-nav-inner">
+                <div class="floating-nav-title">
+                    <span>Git Pettagam</span>
+                    <small>Navigation</small>
                 </div>
 
-                <div class="nav-scroll">
-
-                    <!-- UN MODIFIED QUICK NAV LINKS -->
-                    <!-- Nee already irukkura <a> links ellam inga paste pannunga -->
-
+                <div class="floating-nav-scroll">
                     <a href="#1-git-identity">1. Git Identity</a>
                     <a href="#2-check-current-repository-status">2. Check Current Repository Status</a>
                     <a href="#3-check-current-branch">3. Check Current Branch</a>
@@ -123,16 +122,10 @@
                     <a href="#43-golden-rule">43. Golden Rule</a>
                     <a href="#git-command-safety-guide">Git Command Safety Guide</a>
                     <a href="#final-reminder">Final Reminder</a>
-
                 </div>
-            </nav>
+            </div>
+        </nav>
 
-            <main class="content">
-
-
-            </main>
-
-        </div>
     </div>
 
     <script>
@@ -148,6 +141,7 @@
                     await navigator.clipboard.writeText(code);
 
                     const oldText = button.textContent;
+
                     button.textContent = "Copied";
                     button.classList.add("is-copied");
 
@@ -165,32 +159,51 @@
             });
         });
 
-        const navLinks = document.querySelectorAll(".quick-nav a");
-        const sections = document.querySelectorAll(".content section[id]");
+        const navLinks = document.querySelectorAll(
+            ".floating-nav-scroll a"
+        );
+
+        const sections = document.querySelectorAll(
+            ".content section[id]"
+        );
 
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
+                const visible = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort(
+                        (a, b) =>
+                            b.intersectionRatio -
+                            a.intersectionRatio
+                    )[0];
 
-                    navLinks.forEach((link) => {
-                        link.classList.remove("active");
-                    });
+                if (!visible) return;
 
-                    const activeLink = document.querySelector(
-                        `.quick-nav a[href="#${entry.target.id}"]`
-                    );
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                });
 
-                    activeLink?.classList.add("active");
+                const activeLink = document.querySelector(
+                    `.floating-nav-scroll a[href="#${visible.target.id}"]`
+                );
+
+                activeLink?.classList.add("active");
+
+                activeLink?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "center"
                 });
             },
             {
-                rootMargin: "-15% 0px -70% 0px",
-                threshold: 0
+                rootMargin: "-10% 0px -75% 0px",
+                threshold: [0, 0.2, 0.5]
             }
         );
 
-        sections.forEach((section) => observer.observe(section));
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
     </script>
 
 </body>
