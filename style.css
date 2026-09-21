@@ -154,6 +154,16 @@ a {
     border-bottom: 1px solid var(--border);
 }
 
+.brand-a {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
+
 
 .brand {
     min-width: 0;
